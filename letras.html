@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--   --->
+     <!-- Meta tags for search engine optimization (SEO) -->
+<meta name="description" content="Explore a captivating curved text animation using HTML and CSS. Watch as the text gracefully follows a circular path, creating an engaging visual effect. Enhance your web design with this simple yet dynamic animation.">
+<meta name="keywords" content="HTML, CSS, curved text, animation, web design, visual effect">
+
+<!-- Open Graph Protocol for better sharing on social media -->
+<meta property="og:title" content="Curved Text Animation">
+<meta property="og:description" content="Explore a captivating curved text animation using HTML and CSS. Watch as the text gracefully follows a circular path, creating an engaging visual effect. Enhance your web design with this simple yet dynamic animation.">
+<meta property="og:image" content="URL_to_an_image.jpg">
+<meta property="og:url" content="URL_of_your_website">
+<meta property="og:type" content="website">
+
+<!-- Twitter Card for better sharing on Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Curved Text Animation">
+<meta name="twitter:description" content="Explore a captivating curved text animation using HTML and CSS. Watch as the text gracefully follows a circular path, creating an engaging visual effect. Enhance your web design with this simple yet dynamic animation.">
+<meta name="twitter:image" content="URL_to_an_image.jpg">
+	<title>Letras</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<div class ="circulo1"></div>
+<img class="sub_indice"src="imagenes/salvador.jpg" alt="sub_indice">
+<img class="foto" src="imagenes/imag_kenny.jpg" alt="foto">
+<img class="rectangulo" src="imagenes/salvador_2.jpg" alt="foto_2">
+
+<!--este es el menu curva de letras pero no se como anclarlos para q no se mueva
+cuando la pagina cambie de tama;o >-->
+<!---
+ <img class="inicio" src="imagenes/inicio.svg" alt="inicio" >
+<img class="portafoleo" src="imagenes/portafolio.svg" alt="portafolio">
+<img class="contac" src="imagenes/contactame.svg" alt="conoceme">
+<img class="conoc" src="imagenes/sobre_Mi.svg" alt="circulo2">
+
+-->
+
+
+
+
+
+<body>
+
+<header>
+
+    <div class="container"> </div>
+
+
+
+
+
+
+    <!--
+    <div class="container"></div>
+    <circular-text text="•    Inicio  •   Conoceme   •   Portafolio    •  Contacto    •                        
+    " 
+    radus="100" ></circular-text>-->
+
+</header>
+
+
+<footer>
+
+
+</footer>
+
+<script>
+    
+ function circularText(className,text, radius, range, startPos, css, bottomCss) {
+    var textArr = text.split("");
+    var container = document.querySelector('.container');
+    var containerHeight = container.clientHeight;
+    var newElement = document.createElement("div");
+        newElement.setAttribute('class', className);
+  
+    var deg = range / textArr.length;
+      textArr.forEach(function(ch){
+      ch =  "<p style=\"height:"+radius+"px;"+css+";transform:rotate("+startPos+"deg);left:50%;top:"+ (containerHeight/2- radius)+"px;position:absolute;transform-origin:0 100%\">" +
+             "<span style=\""+bottomCss+"\">"+ch+"</span>" +
+            "</p>";
+      newElement.innerHTML += ch;
+      startPos += deg;
+    });
+    container.appendChild(newElement);
+  }
+  
+  circularText("text circTxt1","Conoceme  •  Inicio  •  Portafolio   •  Contacto", 191,  -150, -110, 'font-size: 6px; color:#000;', 'transform : scaleY(-2) scaleX(-2); position:absolute');
+ /* circularText("text circTxt2","This is text top", 260,  170, -85, 'font-size: 34px; color:#f00;', '')
+  circularText("text circTxt1","This is text TOP smaller", 220,  175, -85, 'font-size: 16px; color:#aaa;', '');
+  circularText("text circTxt2","inicio  portafoleo  ", 220,  -95, -135, 'font-size: 16px; color:#999;' ,'transform : scaleY(-1) scaleX(-1); position:absolute');
+  ;*/
+</script>
+
+
+<!--type="module"
+src="https://unpkg.com/@webpunk/circular-text@1.3.0/dist-web/index.bundled.js"-->
+
+
+
+
+
+
+</html>
+<!--lo que esta comentado  son las letras en circulo--> 
